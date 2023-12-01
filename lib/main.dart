@@ -53,8 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(
@@ -62,41 +60,25 @@ class _MyHomePageState extends State<MyHomePage> {
           color: Colors.lightBlue,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 LogoWidget(),
-                ElevatedButton(onPressed: goToProducts, child: Text("Start Shopping"))
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: goToProducts,
+                  child: Text(
+                    "Start Shopping",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(200, 60),
+                  ),
+                ),
               ],
             ),
           ),
         ),
       ),
-      // body: Center(
-      //
-      //   // Center is a layout widget. It takes a single child and positions it
-      //   // in the middle of the parent.
-      //   child: Container(
-      //
-      //     children: <Widget>[
-      //       const Text(
-      //         'You have pushed the button this many times:',
-      //       ),
-      //       Text(
-      //         '$_counter',
-      //         style: Theme.of(context).textTheme.headlineMedium,
-      //       ),
-      //     ],
-      //
-      //     // child: Column(
-      //     //   mainAxisAlignment: MainAxisAlignment.center,
-      //     //
-      //     // ),
-      //   )
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
@@ -108,10 +90,10 @@ class LogoWidget extends StatelessWidget {
       width: 200.0,
       height: 200.0,
       child: Image(
-          image: AssetImage(
-              "images/logo.png"
-          )
+        image: AssetImage("images/logo.png"),
+        fit: BoxFit.cover,
       ),
     );
   }
 }
+
