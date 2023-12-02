@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:step_up_shoes/shoe.dart';
-import 'package:step_up_shoes/product-details.dart';
+import 'package:step_up_shoes/productDetails.dart';
 
 class Products extends StatelessWidget {
   @override
