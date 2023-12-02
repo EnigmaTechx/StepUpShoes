@@ -42,8 +42,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                // Implement the checkout functionality here
-                // For simplicity, this example just prints the input values
+
                 print("Name: ${_nameController.text}");
                 print("Email: ${_emailController.text}");
               },
