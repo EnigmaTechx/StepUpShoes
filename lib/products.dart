@@ -119,11 +119,6 @@ class ShoeCard extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8.0),
-                // Text(
-                //   shoe.description,
-                //   maxLines: 2,
-                //   overflow: TextOverflow.ellipsis,
-                // ),
               ],
             ),
           ),
@@ -136,7 +131,7 @@ class ShoeCard extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProductDetailsPage(shoe: shoe)),
+                      MaterialPageRoute(builder: (context) => ProductDetails(shoe: shoe)),
                     );
                   },
                   child: Text('View Details'),

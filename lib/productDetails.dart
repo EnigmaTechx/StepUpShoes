@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:step_up_shoes/shoe.dart';
 import 'checkout.dart';
 
-class ProductDetailsPage extends StatelessWidget {
+class ProductDetails extends StatelessWidget {
   final Shoe shoe;
 
-  ProductDetailsPage({required this.shoe});
+  ProductDetails({required this.shoe});
 
   @override
   Widget build(BuildContext context) {
