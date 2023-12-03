@@ -65,7 +65,7 @@ class ShoeGrid extends StatelessWidget {
       description: 'Classic all-weather shoes',
       price: 100.99,
       image: 'images/vans.jpg',
-    ),
+    )
 
   ];
 
@@ -75,8 +75,7 @@ class ShoeGrid extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 8.0,
-        mainAxisSpacing: 8.0,
-      ),
+        mainAxisSpacing: 8.0,),
       itemCount: shoes.length,
       itemBuilder: (context, index) {
         return ShoeCard(shoe: shoes[index]);

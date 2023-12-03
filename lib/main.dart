@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:step_up_shoes/shoe.dart';
 import 'package:step_up_shoes/products.dart';
 
 void main() {
@@ -9,13 +8,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Step Up Shoes',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.deepPurple,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Step Up Shoes'),
@@ -33,15 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void goToProducts(){
+  void goToProducts() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Products()),
@@ -52,30 +43,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
         child: Container(
-          color: Colors.lightBlue,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                LogoWidget(),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: goToProducts,
-                  child: Text(
-                    "Start Shopping",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(200, 60),
-                  ),
+          color: Colors.deepPurple,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              LogoWidget(),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: goToProducts,
+                child: Text(
+                  "Start Shopping",
+                  style: TextStyle(fontSize: 20),
                 ),
-              ],
-            ),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size(200, 60),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -89,6 +77,18 @@ class LogoWidget extends StatelessWidget {
     return Container(
       width: 200.0,
       height: 200.0,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.deepPurple.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
       child: Image(
         image: AssetImage("images/logo.png"),
         fit: BoxFit.cover,
@@ -96,4 +96,3 @@ class LogoWidget extends StatelessWidget {
     );
   }
 }
-
